@@ -2,8 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders project title and GitHub link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText('React TypeScript Project');
+  const githubLink = screen.getByText('Visit GitHub Profile');
+  
+  expect(titleElement).toBeInTheDocument();
+  expect(githubLink).toBeInTheDocument();
 });
